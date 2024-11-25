@@ -1,0 +1,10 @@
+a = input("enter the value 1 ")
+b = input("enter the value 2 ")
+print(a+b)
+
+a = int( input("enter the value 1 "))
+b = int( input("enter the value 2 "))
+print(a+b)
+b = float(input("enter the value 2 "))
+a = float(input("enter the value 1 "))
+print(a+b)
