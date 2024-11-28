@@ -20,4 +20,4 @@ d={1,2,3,}
 print(type(a))
 print(type(b))
 print(type(c))
-print(type(a))
+print(type(d))
