@@ -11,9 +11,9 @@
 # a = []
 # print(a)
 
-# b = [1,2,3,[4,5,6,[7,8,9]]]   #multi diamantional
-# # print(b[3][3][1])
-# print(b[-2])
+b = [1,2,3,[4,5,6,[7,8,9]]]   #multi diamantional
+# print(b[3][3][1])
+print(b[-2])
 
 
 # a =[1,2,3,4] # single diamantional
@@ -25,8 +25,8 @@
 
 
 # method
-a = ["DA", "DS","FULLstack"]
-print(a.append(1))
+# a = ["DA", "DS","FULLstack"]
+# print(a.append(1))
 
 # append
 # extend
