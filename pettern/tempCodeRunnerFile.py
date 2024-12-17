@@ -1,3 +1,7 @@
-n = int (input("enter number"))
-for i in range(1,n):
-    print("* ")
+n = input("enter string")
+if n == n[ : :-1]:
+    print("palindrom")
+else:
+     print("Not palindrom")
+      
+    
