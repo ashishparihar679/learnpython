@@ -20,10 +20,10 @@ str1= "cybrom indrapuri"
 str2= str1.startswith("cybrom")
 print(str2)
 
-str1= "cyBrom iNdRApuri"
-str2= str1.swapcase()
-print(str2)
 
+str1= "cybrom indrapuri"
+str2= str1.startswith("cybrom")
+print(str2)
 str1= "cybrom indrapuri"
 str2= str1.capitalize()
 print(str2)
