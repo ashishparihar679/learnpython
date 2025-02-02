@@ -5,3 +5,4 @@ loss_function = [ 'mean absolute', 'mean squared', 'huber loss'  ,'log loss','hi
 # print(loss_function[1:])
 # print(loss_function[:2])
 print(loss_function[:])
+
