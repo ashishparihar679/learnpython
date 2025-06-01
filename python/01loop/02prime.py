@@ -13,23 +13,61 @@
     
     
 
-num = int(input("Enter a number: "))
-i = 2
+# num = int(input("Enter a number: "))
+# i = 2
 
-if num > 1:
-    while i < num:
-        if num % i == 0:
-            print(num, "is not a prime number")
-            break
-        i += 1
-    else:
-        print(num, "is a prime number")
+# if num > 1:
+#     while i < num:
+#         if num % i == 0:
+#             print(num, "is not a prime number")
+#             break
+#         i += 1
+#     else:
+#         print(num, "is a prime number")
+# else:
+#     print(num, "is not a prime number")
+
+
+
+# n = int(input("ENTER THE NUMBER :- "))
+# i=1
+# cnt =0
+# while(i<=n):
+#     if(n%i==0):
+#         cnt += 1
+#         i+=1
+#     if(cnt==2): 
+#         print("PRIME")
+#     else:
+#         print("NOT PRIME")
+
+# n = int(input("ENTER THE NUMBER :- "))
+# i=1
+# cnt =0
+# while(i<=n):
+#     if(n%i==0):
+#         cnt += 1
+#     i+=1
+# if(cnt==2): 
+#    print("PRIME")
+# else:
+#    print("NOT PRIME")
+
+
+n=int(input("enter number : "))
+i=1
+cnt=0
+while(n>=i):
+    if(n%i==0):
+       cnt+=1
+      #  print(n)
+    i+=1
+
+if(cnt==2):
+   print("prime")
 else:
-    print(num, "is not a prime number")
-
-
-
-
+   print("not prime")
+   
 
 
 
