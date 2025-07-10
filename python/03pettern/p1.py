@@ -34,10 +34,16 @@ for i5 in range(5,0,-1):
     print()
 
 for i6 in range(5,0,-1):
-    for j6 in range(1,i6):
+    for j6 in range(1,i5):
         print(" ",end=" ")
-    for k1 in range(5,i6-1,-1):
+    for k1 in range(5,i5-1,-1):
         print("#",end=" ")
     print()
 
+for i7 in range(5,0,-1):
+    for j7 in range(1,i5):
+        print(" ",end=" ")
+    for l1 in range(5,i5-1,-1):
+        print("##",end=" ")
+    print()
     # wap to take input from user and after the input of second fid all the palindrom number of second input times
