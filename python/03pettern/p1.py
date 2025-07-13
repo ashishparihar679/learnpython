@@ -59,4 +59,10 @@ for i9 in range(5,0,-1):
     for l9 in range(5,i5-1,-1):
         print("+",end=" ")
     print()
+for i9 in range(5,0,-1):
+    for j9 in range(1,i5):
+        print(" ",end=" ")
+    for l9 in range(5,i5-1,-1):
+        print("$",end=" ")
+    print()
     # wap to take input from user and after the input of second fid all the palindrom number of second input times
