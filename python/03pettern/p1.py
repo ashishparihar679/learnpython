@@ -143,4 +143,10 @@ for i22 in range(5,0,-1):
     for l22 in range(5,i5-1,-1):
         print("22",end=" ")
     print()
+for i22 in range(5,0,-1):
+    for j22 in range(1,i5):
+        print(" ",end=" ")
+    for l22 in range(5,i5-1,-1):
+        print("22",end=" ")
+    print()
     # wap to take input from user and after the input of second fid all the palindrom number of second input times
