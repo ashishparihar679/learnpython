@@ -7,6 +7,6 @@ else:
     print("positive")
     if(n%2==0):
         print("eeeeeven")
-        
+
     else:
-        print("ooodd")
+        print("o111111111111111111111111oodd")
