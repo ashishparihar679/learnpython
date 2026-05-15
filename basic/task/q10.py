@@ -4,7 +4,7 @@ if(n==0):
 elif(n<0):
     print("----------------negetive")
 else:
-    print("+++++++++******kfkfmfmgkrmkrkrk********++positive")
+    print("+++++++++******-k********++positive")
     if(n%2==0):
         print("eeeee888888ven")
 
