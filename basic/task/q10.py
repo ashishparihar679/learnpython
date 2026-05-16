@@ -9,4 +9,4 @@ else:
         print("eeeee888888ven")
 
     else:
-        print("o111110000000000000000001111111111111111111oodd")
+        print("odd")
