@@ -2,9 +2,9 @@ n = int (input("enter number"))
 if(n==0):
     print("zero")
 elif(n<0):
-    print("----------------negetive")
+    print("nnnnnegetive")
 else:
-    print("+++++++++******-kpositive")
+    print("+++++++++******-")
     if(n%2==0):
         print("eeeee888888ven")
 
