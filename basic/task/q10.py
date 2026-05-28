@@ -4,7 +4,7 @@ if(n==0):
 elif(n<0):
     print("idkckfk")
 else:
-    print("positive++++++")
+    print("------++++++")
     if(n%2==0):
         print("jjjjjjj")
 
