@@ -1,4 +1,4 @@
-n = int (input("enter number"))
+n = int (input("enter number please"))
 if(n==0):
     print("zero00000000000000000000")
 elif(n<0):
