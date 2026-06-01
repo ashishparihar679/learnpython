@@ -1,6 +1,6 @@
 n = int (input("enter number please"))
 if(n==0):
-    print("zero00000000000000000000")
+    print("zero")
 elif(n<0):
     print("idkckfk")
 else:
