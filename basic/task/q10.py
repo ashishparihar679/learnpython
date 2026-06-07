@@ -2,7 +2,7 @@ n = int (input("enter number please"))
 if(n==0):
     print("zero")
 elif(n<0):
-    print("data manaing and warehousing")
+    print("last exam on 8th jun")
 else:
     print("-------------")
     if(n%2==0):
