@@ -6,7 +6,7 @@ elif(n<0):
 else:
     print("-------------")
     if(n%2==0):
-        print("aaaaa")
+        print("bbbbb")
 
     else:
         print("odd")
