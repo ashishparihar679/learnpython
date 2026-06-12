@@ -9,4 +9,4 @@ else:
         print("last")
 
     else:
-        print("odd")
+        print("ferwell")
