@@ -9,4 +9,4 @@ else:
         print("last")
 
     else:
-        print("ferwell")
+        print("last day in room")
