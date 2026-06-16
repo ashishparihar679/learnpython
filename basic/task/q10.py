@@ -9,4 +9,4 @@ else:
         print("last")
 
     else:
-        print("last day in room")
+        print("currenty i am in  my home")
