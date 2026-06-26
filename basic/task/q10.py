@@ -9,4 +9,4 @@ else:
         print("last")
 
     else:
-        print("i plan to going  banglore")
+        print("i will go to banglore")
