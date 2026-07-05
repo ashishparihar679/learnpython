@@ -2,7 +2,7 @@ n = int (input("enter number please"))
 if(n==0):
     print("zero")
 elif(n<0):
-    print("kjdjdjdj than zero")
+    print("leeess than zero")
 else:
     print("-------------")
     if(n%2==0):
