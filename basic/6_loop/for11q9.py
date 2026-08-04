@@ -4,3 +4,4 @@ for i in number:
      print("number is prime")
     else:
      print("one week complete to leave home")
+     print("one week complete to leave home")
