@@ -1,13 +1,6 @@
-l=0
-while(True):
-    n=input("entre pass : ")
-    l=l+1
-    if n=='a@1234':
-        print("CORRECT PASSWORD")
-        break
-    elif l==3:
-        print("PASSWORD LIMIT REACHED")
-        break
-    else:
-        print("INCORRECT PASSWORD PLEASE ENTER CORRECT PASSWORD")
-    
+t1=(10,1.4,4+6j,True,'don')
+# t1[0]=1000 TypeError: 'tuple' object does not support item assignment
+t1=(10,20,30)
+l1=[10,20,30]
+print(t1.__sizeof__())
+print(l1.__sizeof__())
