@@ -2,7 +2,7 @@ s = "Iron \nman and \nspiderman"
 s1 ="Iron \nman and \nspiderman"
 
 print(s)
-print(s.splitlines())
+# print(s.splitlines())
 print(s1.split())
 
 # split()                                                    splitlines()
