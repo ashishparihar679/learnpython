@@ -1,0 +1,3260 @@
+sql
+SQL> select *
+  2  from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> set linesize 100;
+SQL> select * 
+  2  from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL> set pagesize 100;
+SQL> select *
+  2  from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL> select * 
+  2  from emp
+  3  where job='CLERK;
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> select * 
+  2  from emp 
+  3  where job ='CLERK';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+SQL> select *
+  2  from emp
+  3  where job='clerk';
+
+no rows selected
+
+SQL> select * from emp
+  2  where job='SALESMAN';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+
+SQL> select sal from emp
+  2  where job='SALESMAN';
+
+       SAL
+----------
+      1600
+      1250
+      1250
+      1500
+
+SQL> select * from emp
+  2  where sal>2000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+6 rows selected.
+
+SQL>  select * from emp
+  2   where sal >2000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+6 rows selected.
+
+SQL> select * from emp
+  2  where name = 'jones';
+where name = 'jones'
+      *
+ERROR at line 2:
+ORA-00904: "NAME": invalid identifier
+
+
+SQL>  select * from emp
+  2   where name = 'JONES';
+ where name = 'JONES'
+       *
+ERROR at line 2:
+ORA-00904: "NAME": invalid identifier
+
+
+SQL>  select * from emp
+  2   where ename = 'jones';
+
+no rows selected
+
+SQL>  select * from emp
+  2   where ename = 'jones';
+
+no rows selected
+
+SQL>  select * from emp
+  2   where ename = 'jones';
+
+no rows selected
+
+SQL>  select * from emp
+  2   where ename = 'JONES';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+
+SQL>  select * from emp
+  2   where hiredate > '01-JAN-81;
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL>  select * from emp
+  2   where hiredate > '01-JAN-81
+  3  ';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+13 rows selected.
+
+SQL>  select * from emp
+  2   where hiredate > '01-JAN-81
+  3  
+SQL> ;
+  1   select * from emp
+  2*  where hiredate > '01-JAN-81
+SQL> '
+SP2-0042: unknown command "'" - rest of line ignored.
+SQL> select * from emp
+  2  where hiredate > '01-jan-81';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+13 rows selected.
+
+SQL> select ename,sal 
+  2  from emp
+  3  where sal>12000;
+
+no rows selected
+
+SQL> select ename,sal
+  2  from emp
+  3  where sal>1200;
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+FORD             3000
+MILLER           1300
+
+11 rows selected.
+
+SQL> select ename,sal
+  2  from emp
+  3  
+SQL> select empno
+  2  from emp
+  3  where deptno = 30;
+
+     EMPNO
+----------
+      7499
+      7521
+      7654
+      7698
+      7844
+      7900
+
+6 rows selected.
+
+SQL> select ename,hiredate
+  2  from emp
+  3  where hiredate>'31-dec-1981';
+
+ENAME      HIREDATE
+---------- ---------
+SCOTT      19-APR-87
+ADAMS      23-MAY-87
+MILLER     23-JAN-82
+
+SQL> select * from emp
+  2  where job='manager';
+
+no rows selected
+
+SQL> select * from emp
+  2  where job = 'MANAGER';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+
+SQL> select ename,sal 
+  2  from emp
+  3  where comm > 1400;
+
+no rows selected
+
+SQL> select ena
+  2  from emp
+  3  where COMM > 1400;
+select ena
+       *
+ERROR at line 1:
+ORA-00904: "ENA": invalid identifier
+
+
+SQL> select ename,sal 
+  2  from emp
+  3  where comm > 1399;
+
+ENAME             SAL
+---------- ----------
+MARTIN           1250
+
+SQL> select ename,sal 
+  2  from emp
+  3  where comm > sal;
+
+ENAME             SAL
+---------- ----------
+MARTIN           1250
+
+SQL> select ename,sal 
+  2  from emp
+  3  where comm > 1400
+  4  ;
+
+no rows selected
+
+SQL> select empno
+  2  from emp
+  3  where hiredate>'31-dec-1987';
+
+no rows selected
+
+SQL>  select empno
+  2   from emp
+  3   where hiredate
+  4  <'31-dec-1987';
+
+     EMPNO
+----------
+      7369
+      7499
+      7521
+      7566
+      7654
+      7698
+      7782
+      7788
+      7839
+      7844
+      7876
+      7900
+      7902
+      7934
+
+14 rows selected.
+
+SQL> 
+
+SQL> select * from emp
+  2  where job='ANALYST';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> select * from emp
+  2  where sal>2000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+================================
+1. WAQTD DETAILS OF THE EMPLOYEES WORKING AS CLERK AND EARNING
+   LESS THAN 1500.
+
+2. WAQTD NAME AND HIREDATE OF THE EMPLOYEES WORKING AS MANAGER
+   IN DEPT 30.
+
+3. WAQTD DETAILS OF THE EMP ALONG WITH ANNUAL SALARY IF THEY ARE
+   WORKING IN DEPT 30 AS SALESMAN AND THEIR ANNUAL SALARY HAS TO
+   BE GREATER THAN 14000.
+
+4. WAQTD ALL THE DETAILS OF THE EMP WORKING IN DEPT 30
+   OR AS ANALYST.
+
+5. WAQTD NAMES OF THE EMPLOYEES WHOSE SALARY IS LESS THAN 1100
+   AND THEIR DESIGNATION IS CLERK.
+
+6. WAQTD NAME, SAL, ANNUAL SAL AND DEPTNO IF DEPTNO IS 20,
+   EARNING MORE THAN 1100 AND ANNUAL SALARY EXCEEDS 12000.
+
+7. WAQTD EMPNO AND NAMES OF THE EMPLOYEES WORKING AS MANAGER
+   IN DEPT 20.
+ANS==
+SQL> select *
+  2  from emp
+  3  where job='clerk' and sal<1500;
+
+no rows selected
+
+SQL> SELECT * FROM EMP
+  2  WHERE JOB=CLERK AND SAL<1500;
+WHERE JOB=CLERK AND SAL<1500
+          *
+ERROR at line 2:
+ORA-00904: "CLERK": invalid identifier
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT * FROM EMP
+  2* WHERE JOB='CLERK' AND SAL<1500
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT * FROM EMP
+  2* WHERE JOB='CLERK' AND SAL<1500
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+SQL> SELECT ENAME,HIREDATE
+  2  FROM EMP
+  3  WHERE JOB='MANAGER' AND DEPTNO=30;
+
+ENAME      HIREDATE
+---------- ---------
+BLAKE      01-MAY-81
+
+SQL> SELECT * FROM EMP
+  2  WHERE JOB='
+  3  
+SQL> 
+SQL> SELECT EMP.*,SAL*12 AS PACAGE
+  2  FROM EMP
+  3  WHERE JOB='SALESMAN' AND DEPTNO = 30 AND SAL*12 >14000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     PACAGE
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30      19200
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30      15000
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30      15000
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30      18000
+
+SQL> SELECT * 
+  2  FROM EMP
+  3  WHERE DEPTNO = 30 AND JOB = ANALYST;
+WHERE DEPTNO = 30 AND JOB = ANALYST
+                            *
+ERROR at line 3:
+ORA-00904: "ANALYST": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM EMP
+  3* WHERE DEPTNO = 30 AND JOB = 'ANALYST'
+SQL> /
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM EMP
+  3* WHERE DEPTNO = 20 AND JOB = 'ANALYST'
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE JOB ='CLERK' AND SAL<1100;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+SQL> SELECT ENAME, SAL, SAL*12 AS ANNUL SAL, DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO = 20 AND SAL<1100 AND SAL*12<12000;
+SELECT ENAME, SAL, SAL*12 AS ANNUL SAL, DEPTNO
+                                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL, SAL*12 AS ANNUL SAL, DEPTNO
+  2  FROM EMP
+  3* WHERE DEPTNO = 20 AND SAL<1100 AND SAL*12 < 12000
+SQL> /
+SELECT ENAME, SAL, SAL*12 AS ANNUL SAL, DEPTNO
+                                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL, SAL*12 AS ANNUL_SAL, DEPTNO
+  2  FROM EMP
+  3* WHERE DEPTNO = 20 AND SAL<1100 AND SAL*12 > 12000
+SQL> /
+
+no rows selected
+
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL>  SELECT ENAME, SAL, SAL*12 AS ANNUL_SAL, DEPTNO
+  2   FROM EMP
+  3   WHERE DEPTNO = 20 AND SAL<1100 AND SAL*12 > 12000;
+
+no rows selected
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1   SELECT ENAME, SAL, SAL*12 AS ANNUL_SAL, DEPTNO
+  2   FROM EMP
+  3*  WHERE DEPTNO = 20 AND SAL>1100 AND SAL*12 > 12000
+SQL> /
+
+ENAME             SAL  ANNUL_SAL     DEPTNO
+---------- ---------- ---------- ----------
+JONES            2975      35700         20
+SCOTT            3000      36000         20
+FORD             3000      36000         20
+
+SQL> SELECT EMPNO,ENAME
+  2  FROM EMP
+  3  WHERE JOB='MANAGER AND DEPTNO=20;
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT EMPNO,ENAME
+  2  FROM EMP
+  3* WHERE JOB='MANAGER' AND DEPTNO=20
+SQL> /
+
+     EMPNO ENAME
+---------- ----------
+      7566 JONES
+
+============================================================================================================================================================
+
+
+
+Syntax:
+1. SELECT * 
+    FROM EMP , DEPT 
+    WHERE EMP.DEPTNO = DEPT.DEPTNO ;
+
+2. SELECT * 
+    FROM EMP E1 , EMP E2 
+    WHERE E1.MGR = E2.EMPNO ;
+
+3. SELECT * 
+    FROM EMP E1 , EMP E2 , DEPT D1
+    WHERE E1.MGR = E2.EMPNO 
+    AND E1.DEPTNO = D1.DEPTNO ;
+
+4. SELECT * 
+    FROM EMP E1 , EMP E2 , DEPT D2
+    WHERE E1.MGR = E2.EMPNO 
+    AND E2.DEPTNO = D2.DEPTNO ;
+
+5. SELECT * 
+    FROM EMP E1 , EMP E2 , DEPT D1 , DEPT D2 
+    WHERE E1.MGR = E2.EMPNO 
+    AND E1.DEPTNO = D1.DEPTNO 
+    AND E2.DEPTNO = D2.DEPTNO ;
+
+6. SELECT * 
+    FROM EMP E1 , EMP E2 , EMP E3
+    WHERE E1.MGR = E2.EMPNO 
+    AND E2.MGR = E3.EMPNO  ;
+
+7. SELECT * 
+    FROM EMP E1 , EMP E2 , EMP E3 , DEPT D1 , DEPT D2 , DEPT D3
+    WHERE E1.MGR = E2.EMPNO 
+    AND E2.MGR = E3.EMPNO 
+    AND E1.DEPTNO = D1.DEPTNO 
+    AND E2.DEPTNO = D2.DEPTNO
+    AND E3.DEPTNO = D3.DEPTNO  ;
+
+
+
+QUESTIONS :
+----------------------
+Note : To join N number of table we must write N-1 number  of join 
+conditions .
+
+1. WAQTD ENAME MANAGER'S NAME AND EMPLOYEE'S LOCATION 
+FOR THE EMPLOYEES WORKING AS 'CLERK'
+
+SELECT E1.ENAME, E2.ENAME, D1.LOC
+FROM EMP E1, EMP E2, DEPT D1
+WHERE E1.MGR = E2.EMPNO
+AND E1.DEPTNO = D1.DEPTNO
+AND E1.JOB = 'CLERK';
+
+ENAME      ENAME      LOC
+---------- ---------- -------------
+SMITH      FORD       DALLAS
+ADAMS      SCOTT      DALLAS
+JAMES      BLAKE      CHICAGO
+MILLER     CLARK      NEW YORK
+
+2.WAQTD ENAME , MANAGER'S SALARY AND MANAGER'S LOCATION 
+IF MANAGER WORKS AS ''PRESIDENT' .
+
+SELECT E1.ENAME, E2.SAL, D1.LOC
+FROM EMP E1, EMP E2, DEPT D1
+WHERE E1.MGR = E2.EMPNO
+AND E2.DEPTNO = D1.DEPTNO
+AND E2.JOB = 'PRESIDENT';
+
+ENAME             SAL LOC
+---------- ---------- -------------
+JONES            5000 NEW YORK
+BLAKE            5000 NEW YORK
+CLARK            5000 NEW YORK
+
+3. WAQTD ENAME , EMPLOYEE'S SALARY , MANAGER'S NAME ,
+MANAGER'S SALARY ALONG WITH EMPLOYEES DNAME IF 
+EMPLOYEE EARNS MORE THAN MANAGER.
+
+
+  1  SELECT E1.ENAME, E1.SAL,E2.ENAME,E2.SAL, D1.DNAME
+  2  FROM EMP E1, EMP E2, DEPT D1
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E1.DEPTNO = D1.DEPTNO
+  5* AND E1.SAL > E2.SAL
+SQL> /
+
+ENAME             SAL ENAME             SAL DNAME
+---------- ---------- ---------- ---------- --------------
+SCOTT            3000 JONES            2975 RESEARCH
+FORD             3000 JONES            2975 RESEARCH
+
+4. WAQTD ENAME , SAL MANAGER'S NAME MANAGER'S DNAME IF
+MANAGER WORKS IN NEW YORK WITH SALARY MORE THAN 3000.
+
+
+
+  1  SELECT E1.ENAME, E1.SAL,E2.ENAME,D1.DNAME
+  2  FROM EMP E1, EMP E2, DEPT D1
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E2.DEPTNO = D1.DEPTNO
+  5  AND D1.LOC='NEW YORK'
+  6* AND E2.SAL>3000
+SQL> /
+
+ENAME             SAL ENAME      DNAME
+---------- ---------- ---------- --------------
+JONES            2975 KING       ACCOUNTING
+BLAKE            2850 KING       ACCOUNTING
+CLARK            2450 KING       ACCOUNTING
+
+
+5.WAQTD ENAME , EMPLOYEE'S DNAME , MANAGER'S NAME MANAGER'S
+DNAME IF EMP AND MANAGER WORKS IN SAME LOC .
+
+
+SQL> SELECT E1.ENAME,D1.DNAME,E2.ENAME,D2.DNAME
+  2  FROM EMP E1, EMP E2, DEPT D1,DEPT D2
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E1.DEPTNO = D1.DEPTNO
+  5  AND E2.DEPTNO = D2.DEPTNO
+  6  AND D1.LOC=D2.LOC;
+
+ENAME      DNAME          ENAME      DNAME
+---------- -------------- ---------- --------------
+SMITH      RESEARCH       FORD       RESEARCH
+ALLEN      SALES          BLAKE      SALES
+WARD       SALES          BLAKE      SALES
+MARTIN     SALES          BLAKE      SALES
+CLARK      ACCOUNTING     KING       ACCOUNTING
+SCOTT      RESEARCH       JONES      RESEARCH
+TURNER     SALES          BLAKE      SALES
+ADAMS      RESEARCH       SCOTT      RESEARCH
+JAMES      SALES          BLAKE      SALES
+FORD       RESEARCH       JONES      RESEARCH
+MILLER     ACCOUNTING     CLARK      ACCOUNTING
+
+11 rows selected.
+
+6.WAQTD ENAME , EMPLOYEES' HIREDATE , MANAGER'S HIREDATE 
+IF MANAGER WAS HIRED BEFORE THE EMPLOYEE IN TO ACCOUNTING 
+DEPARTMENT .
+
+  1  SELECT E1.ENAME,E1.HIREDATE,E2.HIREDATE
+  2  FROM EMP E1, EMP E2, DEPT D1
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E1.DEPTNO = D1.DEPTNO
+  5  AND D1.DNAME = 'ACCOUNTING'
+  6* AND E2.HIREDATE < E1.HIREDATE
+SQL> /
+
+ENAME      HIREDATE  HIREDATE
+---------- --------- ---------
+MILLER     23-JAN-82 09-JUN-81
+
+7.WAQTD EMPLOYEE'S NAME , MANAGER'S NAME ALONG WITH , 
+MANAGER'S MANAGER'S NAME .
+
+
+
+SQL> SELECT E1.ENAME,E2.ENAME,E3.ENAME
+  2  FROM EMP E1, EMP E2, EMP E3
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E2.MGR = E3.EMPNO;
+
+ENAME      ENAME      ENAME
+---------- ---------- ----------
+SMITH      FORD       JONES
+ALLEN      BLAKE      KING
+WARD       BLAKE      KING
+MARTIN     BLAKE      KING
+SCOTT      JONES      KING
+TURNER     BLAKE      KING
+ADAMS      SCOTT      JONES
+JAMES      BLAKE      KING
+FORD       JONES      KING
+MILLER     CLARK      KING
+
+10 rows selected.
+
+8. WAQTD ENAME , DNAME , MANAGER'S NAME HIS DEPT NAME IF 
+MANAGER IS HIRED BEFORE 1982 .
+
+
+  1  SELECT E1.ENAME,D1.DNAME,E2.ENAME,D2.DNAME
+  2  FROM EMP E1, EMP E2, DEPT D1,DEPT D2
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E1.DEPTNO=D1.DEPTNO
+  5  AND E2.DEPTNO=D2.DEPTNO
+  6* AND E2.HIREDATE < '01-JAN-1982'
+SQL> /
+
+ENAME      DNAME          ENAME      DNAME
+---------- -------------- ---------- -------------
+SMITH      RESEARCH       FORD       RESEARCH
+ALLEN      SALES          BLAKE      SALES
+WARD       SALES          BLAKE      SALES
+JONES      RESEARCH       KING       ACCOUNTING
+MARTIN     SALES          BLAKE      SALES
+BLAKE      SALES          KING       ACCOUNTING
+CLARK      ACCOUNTING     KING       ACCOUNTING
+SCOTT      RESEARCH       JONES      RESEARCH
+TURNER     SALES          BLAKE      SALES
+JAMES      SALES          BLAKE      SALES
+FORD       RESEARCH       JONES      RESEARCH
+MILLER     ACCOUNTING     CLARK      ACCOUNTING
+
+12 rows selected.
+
+
+
+9.WAQTD EMPLOYEE'S NAME WITH DNAME , MANAGER'S NAME WITH
+LOC ALONG WITH , MANAGER'S MANAGER'S NAME WITH LOC  .
+
+
+  1  SELECT E1.ENAME,D1.DNAME,E2.ENAME,D2.LOC,E3.ENAME,D3.LOC
+  2  FROM EMP E1, EMP E2, EMP E3, DEPT D1,DEPT D2,DEPT D3
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E2.MGR = E3.EMPNO
+  5  AND E1.DEPTNO=D1.DEPTNO
+  6  AND E2.DEPTNO=D2.DEPTNO
+  7* AND E3.DEPTNO=D3.DEPTNO
+SQL> /
+
+ENAME      DNAME          ENAME      LOC           ENAME      LOC
+---------- -------------- ---------- ------------- ---------- -------------
+SMITH      RESEARCH       FORD       DALLAS        JONES      DALLAS
+ALLEN      SALES          BLAKE      CHICAGO       KING       NEW YORK
+WARD       SALES          BLAKE      CHICAGO       KING       NEW YORK
+MARTIN     SALES          BLAKE      CHICAGO       KING       NEW YORK
+SCOTT      RESEARCH       JONES      DALLAS        KING       NEW YORK
+TURNER     SALES          BLAKE      CHICAGO       KING       NEW YORK
+ADAMS      RESEARCH       SCOTT      DALLAS        JONES      DALLAS
+JAMES      SALES          BLAKE      CHICAGO       KING       NEW YORK
+FORD       RESEARCH       JONES      DALLAS        KING       NEW YORK
+MILLER     ACCOUNTING     CLARK      NEW YORK      KING       NEW YORK
+
+10.WAQTD EMPLOYEE'S NAME WITH DNAME , MANAGER'S SAL WITH
+DNAME ALONG WITH , MANAGER'S MANAGER'S JOB WITH DNAME IF
+EMPLOYEE WORKS IN DEPT 10 , MANAGER WORKS AS PRESIDENT OR 
+ACTUAL MANAGER AND MANAGER'S MANAGER SALARY MUST BE GREATER OR EQUAL TO MANAGER'S SALARY  .
+
+
+  1  SELECT E1.ENAME,D1.DNAME,E2.SAL,D2.DNAME,E3.JOB,D3.DNAME
+  2  FROM EMP E1, EMP E2, EMP E3, DEPT D1,DEPT D2,DEPT D3
+  3  WHERE E1.MGR = E2.EMPNO
+  4  AND E2.MGR = E3.EMPNO
+  5  AND E1.DEPTNO=D1.DEPTNO
+  6  AND E2.DEPTNO=D2.DEPTNO
+  7  AND E3.DEPTNO=D3.DEPTNO
+  8  AND E1.DEPTNO IN (10)
+  9  AND E2.JOB IN('PRESIDENT','MANAGER')
+ 10* AND E3.SAL >= E2.SAL
+SQL> /
+
+ENAME      DNAME                 SAL DNAME          JOB       DNAME
+---------- -------------- ---------- -------------- --------- --------------
+MILLER     ACCOUNTING           2450 ACCOUNTING     PRESIDENT ACCOUNTING
+
+============================================================================================================================================================
+
+
+SQL> SELECT UPPER('ashish') FROM DUAL;
+
+UPPER(
+------
+ASHISH
+
+SQL> SELECT ENAME, UPPER(ENAME)
+  2  FROM EMP;
+
+ENAME      UPPER(ENAM
+---------- ----------
+SMITH      SMITH
+ALLEN      ALLEN
+WARD       WARD
+JONES      JONES
+MARTIN     MARTIN
+BLAKE      BLAKE
+CLARK      CLARK
+SCOTT      SCOTT
+KING       KING
+TURNER     TURNER
+ADAMS      ADAMS
+
+ENAME      UPPER(ENAM
+---------- ----------
+JAMES      JAMES
+FORD       FORD
+MILLER     MILLER
+
+14 rows selected.
+
+SQL> SET PAGES 1000 LINES 1000;
+SQL> SELECT ENAME, UPPER(ENAME)
+  2  FROM EMP;
+
+ENAME      UPPER(ENAM
+---------- ----------
+SMITH      SMITH
+ALLEN      ALLEN
+WARD       WARD
+JONES      JONES
+MARTIN     MARTIN
+BLAKE      BLAKE
+CLARK      CLARK
+SCOTT      SCOTT
+KING       KING
+TURNER     TURNER
+ADAMS      ADAMS
+JAMES      JAMES
+FORD       FORD
+MILLER     MILLER
+
+14 rows selected.
+
+SQL> SELECT LOWER('HELLO') FROM DUAL;
+
+LOWER
+-----
+hello
+
+SQL> SELECT ENAME, LOWER(ENAME)
+  2  FROM EMP;
+
+ENAME      LOWER(ENAM
+---------- ----------
+SMITH      smith
+ALLEN      allen
+WARD       ward
+JONES      jones
+MARTIN     martin
+BLAKE      blake
+CLARK      clark
+SCOTT      scott
+KING       king
+TURNER     turner
+ADAMS      adams
+JAMES      james
+FORD       ford
+MILLER     miller
+
+14 rows selected.
+
+SQL> SELECT INITCAP('hello world') FROM DUAL;
+
+INITCAP('HE
+-----------
+Hello World
+
+SQL> SELECT LENGTH('SQL') FROM DUAL;
+
+LENGTH('SQL')
+-------------
+            3
+
+SQL> SELECT LENGTH('Hello World') FROM DUAL;
+
+LENGTH('HELLOWORLD')
+--------------------
+                  11
+
+SQL> SELECT ENAME, LENGTH(ENAME)
+  2  FROM EMP;
+
+ENAME      LENGTH(ENAME)
+---------- -------------
+SMITH                  5
+ALLEN                  5
+WARD                   4
+JONES                  5
+MARTIN                 6
+BLAKE                  5
+CLARK                  5
+SCOTT                  5
+KING                   4
+TURNER                 6
+ADAMS                  5
+JAMES                  5
+FORD                   4
+MILLER                 6
+
+14 rows selected.
+
+SQL> SELECT SUBSTR('ORACLE',2,3) FROM DUAL;
+
+SUB
+---
+RAC
+
+SQL> SELECT SUBSTR('ORACLE',2,4) FROM DUAL;
+
+SUBS
+----
+RACL
+
+SQL> SELECT SUBSTR('DATABASE',5,4) FROM DUAL;
+
+SUBS
+----
+BASE
+
+SQL> SELECT SUBSTR('ORACLE',3) FROM DUAL;
+
+SUBS
+----
+ACLE
+
+SQL> SELECT ENAME,
+  2         SUBSTR(ENAME,1,3)
+  3  FROM EMP;
+
+ENAME      SUB
+---------- ---
+SMITH      SMI
+ALLEN      ALL
+WARD       WAR
+JONES      JON
+MARTIN     MAR
+BLAKE      BLA
+CLARK      CLA
+SCOTT      SCO
+KING       KIN
+TURNER     TUR
+ADAMS      ADA
+JAMES      JAM
+FORD       FOR
+MILLER     MIL
+
+14 rows selected.
+
+SQL> SELECT INSTR('ORACLE','A') FROM DUAL;
+
+INSTR('ORACLE','A')
+-------------------
+                  3
+
+SQL> SELECT INSTR('BANANA','A') FROM DUAL;
+
+INSTR('BANANA','A')
+-------------------
+                  2
+
+SQL> SELECT REPLACE('ABC','A','X')
+  2  FROM DUAL;
+
+REP
+---
+XBC
+
+SQL> SELECT REPLACE('BANANA','A','O')
+  2  FROM DUAL;
+
+REPLAC
+------
+BONONO
+
+SQL> SELECT ENAME,
+  2         REPLACE(ENAME,'A','*')
+  3  FROM EMP;
+
+ENAME      REPLACE(EN
+---------- ----------
+SMITH      SMITH
+ALLEN      *LLEN
+WARD       W*RD
+JONES      JONES
+MARTIN     M*RTIN
+BLAKE      BL*KE
+CLARK      CL*RK
+SCOTT      SCOTT
+KING       KING
+TURNER     TURNER
+ADAMS      *D*MS
+JAMES      J*MES
+FORD       FORD
+MILLER     MILLER
+
+14 rows selected.
+
+SQL> SELECT TRIM(' SQL ')
+  2  FROM DUAL;
+
+TRI
+---
+SQL
+
+SQL> SELECT TRIM(' SQ L ') FROM DUAL;
+
+TRIM
+----
+SQ L
+
+SQL> 
+SQL> SELECT SUBSTR('ORACLE',-3) FROM DUAL;
+
+SUB
+---
+CLE
+
+SQL> SELECT SUBSTR('ORACLE',-3,3) FROM DUAL;
+
+SUB
+---
+CLE
+
+SQL> SELECT ENAME
+  2  FROM EMP
+  3  WHERE INSTR(UPPER(ENAME), 'A', 1, 1) > 0;
+
+ENAME
+----------
+ALLEN
+WARD
+MARTIN
+BLAKE
+CLARK
+ADAMS
+JAMES
+
+7 rows selected.
+
+SQL> SELECT ENAME
+  2  FROM EMP
+  3  WHERE INSTR(UPPER(ENAME), 'A', 1, 1) >= 0;
+
+ENAME
+----------
+SMITH
+ALLEN
+WARD
+JONES
+MARTIN
+BLAKE
+CLARK
+SCOTT
+KING
+TURNER
+ADAMS
+JAMES
+FORD
+MILLER
+
+14 rows selected.
+
+SQL> SELECT ENAME
+  2  FROM EMP
+  3  WHERE INSTR(UPPER(ENAME), 'A', 1, 1) > 1;
+
+ENAME
+----------
+WARD
+MARTIN
+BLAKE
+CLARK
+JAMES
+
+SQL> SELECT ENAME
+  2  FROM EMP
+  3  WHERE INSTR(UPPER(ENAME), 'A', 1, 1) > 2;
+
+ENAME
+----------
+BLAKE
+CLARK
+
+SQL> SELECT ENAME
+  2  FROM EMP
+  3  WHERE INSTR(UPPER(ENAME), 'A', 1, 1) > 3;
+
+no rows selected
+
+SQL> SELECT ENAME
+  2  FROM EMP
+  3  WHERE INSTR(UPPER(ENAME), 'A', 1, 1) > 0;
+
+ENAME
+----------
+ALLEN
+WARD
+MARTIN
+BLAKE
+CLARK
+ADAMS
+JAMES
+
+7 rows selected.
+
+
+
+
+
+============================================================================================================================================================
+
+
+SQL> SELECT ENAME,
+  2         SAL,
+  3         ROW_NUMBER() OVER(ORDER BY SAL DESC) AS ROW_NUM
+  4  FROM EMP;
+
+ENAME             SAL    ROW_NUM
+---------- ---------- ----------
+KING             5000          1
+FORD             3000          2
+SCOTT            3000          3
+JONES            2975          4
+BLAKE            2850          5
+CLARK            2450          6
+ALLEN            1600          7
+TURNER           1500          8
+MILLER           1300          9
+WARD             1250         10
+MARTIN           1250         11
+
+ENAME             SAL    ROW_NUM
+---------- ---------- ----------
+ADAMS            1100         12
+JAMES             950         13
+SMITH             800         14
+
+14 rows selected.
+
+SQL> SET PAGES 1000 LINES 1000;
+SQL> 
+SQL>  SELECT ENAME,SAL
+  2   ROW_NUMBER() OVER(ORDER BY SAL DESC) AS ROWNUMBER
+  3   FROM EMP;
+ ROW_NUMBER() OVER(ORDER BY SAL DESC) AS ROWNUMBER
+           *
+ERROR at line 2:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1   SELECT ENAME,SAL,
+  2   ROW_NUMBER() OVER(ORDER BY SAL DESC) AS ROWNUMBER
+  3*  FROM EMP
+SQL> /
+
+ENAME             SAL  ROWNUMBER
+---------- ---------- ----------
+KING             5000          1
+FORD             3000          2
+SCOTT            3000          3
+JONES            2975          4
+BLAKE            2850          5
+CLARK            2450          6
+ALLEN            1600          7
+TURNER           1500          8
+MILLER           1300          9
+WARD             1250         10
+MARTIN           1250         11
+ADAMS            1100         12
+JAMES             950         13
+SMITH             800         14
+
+14 rows selected.
+
+SQL> SELECT ENAME,
+  2         SAL,
+  3         RANK() OVER(ORDER BY SAL DESC) AS RANK_NO
+  4  FROM EMP;
+
+ENAME             SAL    RANK_NO
+---------- ---------- ----------
+KING             5000          1
+FORD             3000          2
+SCOTT            3000          2
+JONES            2975          4
+BLAKE            2850          5
+CLARK            2450          6
+ALLEN            1600          7
+TURNER           1500          8
+MILLER           1300          9
+WARD             1250         10
+MARTIN           1250         10
+ADAMS            1100         12
+JAMES             950         13
+SMITH             800         14
+
+14 rows selected.
+
+SQL> SELECT ENAME,
+  2         SAL,
+  3         DENSE_RANK() OVER(ORDER BY SAL DESC) AS DRANK
+  4  FROM EMP;
+
+ENAME             SAL      DRANK
+---------- ---------- ----------
+KING             5000          1
+FORD             3000          2
+SCOTT            3000          2
+JONES            2975          3
+BLAKE            2850          4
+CLARK            2450          5
+ALLEN            1600          6
+TURNER           1500          7
+MILLER           1300          8
+WARD             1250          9
+MARTIN           1250          9
+ADAMS            1100         10
+JAMES             950         11
+SMITH             800         12
+
+14 rows selected.
+
+SQL> SELECT ENAME ,
+  2  ROW_NUMBER() OVER(ORDER BY ENAME) AS SLNO
+  3  FROM EMP;
+
+ENAME            SLNO
+---------- ----------
+ADAMS               1
+ALLEN               2
+BLAKE               3
+CLARK               4
+FORD                5
+JAMES               6
+JONES               7
+KING                8
+MARTIN              9
+MILLER             10
+SCOTT              11
+SMITH              12
+TURNER             13
+WARD               14
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME ,
+  2  ROW_NUMBER() OVER(ORDER BY ENAME ASC) AS SLNO
+  3* FROM EMP
+SQL> /
+
+ENAME            SLNO
+---------- ----------
+ADAMS               1
+ALLEN               2
+BLAKE               3
+CLARK               4
+FORD                5
+JAMES               6
+JONES               7
+KING                8
+MARTIN              9
+MILLER             10
+SCOTT              11
+SMITH              12
+TURNER             13
+WARD               14
+
+14 rows selected.
+
+SQL> SELECT ENAME,ROW_NUMBER() OVER(ORDER BY SAL DESC)FROM EMP;
+
+ENAME      ROW_NUMBER()OVER(ORDERBYSALDESC)
+---------- --------------------------------
+KING                                      1
+FORD                                      2
+SCOTT                                     3
+JONES                                     4
+BLAKE                                     5
+CLARK                                     6
+ALLEN                                     7
+TURNER                                    8
+MILLER                                    9
+WARD                                     10
+MARTIN                                   11
+ADAMS                                    12
+JAMES                                    13
+SMITH                                    14
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,
+  2  ROW_NUMBER() OVER(ORDER BY SAL DESC)
+  3* FROM EMP
+SQL> /
+
+ENAME      ROW_NUMBER()OVER(ORDERBYSALDESC)
+---------- --------------------------------
+KING                                      1
+FORD                                      2
+SCOTT                                     3
+JONES                                     4
+BLAKE                                     5
+CLARK                                     6
+ALLEN                                     7
+TURNER                                    8
+MILLER                                    9
+WARD                                     10
+MARTIN                                   11
+ADAMS                                    12
+JAMES                                    13
+SMITH                                    14
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,
+  2  ROW_NUMBER() OVER(ORDER BY SAL DESC) AS ASHISH
+  3* FROM EMP
+SQL> /
+
+ENAME          ASHISH
+---------- ----------
+KING                1
+FORD                2
+SCOTT               3
+JONES               4
+BLAKE               5
+CLARK               6
+ALLEN               7
+TURNER              8
+MILLER              9
+WARD               10
+MARTIN             11
+ADAMS              12
+JAMES              13
+SMITH              14
+
+14 rows selected.
+
+SQL> 
+SQL>  SELECT ENAME,
+  2   DENSE_RANK() OVER(ORDER BY SAL DESC) AS RANK FROM EMP
+  3  ;
+
+ENAME            RANK
+---------- ----------
+KING                1
+FORD                2
+SCOTT               2
+JONES               3
+BLAKE               4
+CLARK               5
+ALLEN               6
+TURNER              7
+MILLER              8
+WARD                9
+MARTIN              9
+ADAMS              10
+JAMES              11
+SMITH              12
+
+14 rows selected.
+
+SQL> SELECT ENAME,DEPTNO,SAL,ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL)FROM EMP;
+
+ENAME          DEPTNO        SAL ROW_NUMBER()OVER(PARTITIONBYDEPTNOORDERBYSAL)
+---------- ---------- ---------- ---------------------------------------------
+MILLER             10       1300                                             1
+CLARK              10       2450                                             2
+KING               10       5000                                             3
+SMITH              20        800                                             1
+ADAMS              20       1100                                             2
+JONES              20       2975                                             3
+SCOTT              20       3000                                             4
+FORD               20       3000                                             5
+JAMES              30        950                                             1
+MARTIN             30       1250                                             2
+WARD               30       1250                                             3
+TURNER             30       1500                                             4
+ALLEN              30       1600                                             5
+BLAKE              30       2850                                             6
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,DEPTNO,SAL,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL) AS SLNO
+  3* FROM EMP
+SQL> /
+
+ENAME          DEPTNO        SAL       SLNO
+---------- ---------- ---------- ----------
+MILLER             10       1300          1
+CLARK              10       2450          2
+KING               10       5000          3
+SMITH              20        800          1
+ADAMS              20       1100          2
+JONES              20       2975          3
+SCOTT              20       3000          4
+FORD               20       3000          5
+JAMES              30        950          1
+MARTIN             30       1250          2
+WARD               30       1250          3
+TURNER             30       1500          4
+ALLEN              30       1600          5
+BLAKE              30       2850          6
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,SAL,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL) AS SLNO
+  3* FROM EMP
+SQL> /
+
+ENAME             SAL       SLNO
+---------- ---------- ----------
+MILLER           1300          1
+CLARK            2450          2
+KING             5000          3
+SMITH             800          1
+ADAMS            1100          2
+JONES            2975          3
+SCOTT            3000          4
+FORD             3000          5
+JAMES             950          1
+MARTIN           1250          2
+WARD             1250          3
+TURNER           1500          4
+ALLEN            1600          5
+BLAKE            2850          6
+
+14 rows selected.
+
+SQL> SELECT ENAME,DEPTNO,SAL,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL) AS SLNO
+  3  FROM EMP
+  4  /
+
+ENAME          DEPTNO        SAL       SLNO
+---------- ---------- ---------- ----------
+MILLER             10       1300          1
+CLARK              10       2450          2
+KING               10       5000          3
+SMITH              20        800          1
+ADAMS              20       1100          2
+JONES              20       2975          3
+SCOTT              20       3000          4
+FORD               20       3000          5
+JAMES              30        950          1
+MARTIN             30       1250          2
+WARD               30       1250          3
+TURNER             30       1500          4
+ALLEN              30       1600          5
+BLAKE              30       2850          6
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,DEPTNO,SAL,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL DESE) AS SLNO
+  3* FROM EMP
+SQL> /
+ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL DESE) AS SLNO
+                                                   *
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,DEPTNO,SAL,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS SLNO
+  3* FROM EMP
+SQL> /
+
+ENAME          DEPTNO        SAL       SLNO
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+MILLER             10       1300          3
+SCOTT              20       3000          1
+FORD               20       3000          2
+JONES              20       2975          3
+ADAMS              20       1100          4
+SMITH              20        800          5
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+TURNER             30       1500          3
+MARTIN             30       1250          4
+WARD               30       1250          5
+JAMES              30        950          6
+
+14 rows selected.
+
+SQL> SELECT ENAME,DEPTNO,SAL,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS SLNO
+  3  FROM EMP
+  4  
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,DEPTNO,SAL,
+  2  RANK() OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS SLNO
+  3* FROM EMP
+SQL> /
+
+ENAME          DEPTNO        SAL       SLNO
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+MILLER             10       1300          3
+SCOTT              20       3000          1
+FORD               20       3000          1
+JONES              20       2975          3
+ADAMS              20       1100          4
+SMITH              20        800          5
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+TURNER             30       1500          3
+MARTIN             30       1250          4
+WARD               30       1250          4
+JAMES              30        950          6
+
+14 rows selected.
+
+SQL>  SELECT ENAME,DEPTNO,SAL,
+  2   ROW_NUMBER  () OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS SLNO
+  3   FROM EMP;
+
+ENAME          DEPTNO        SAL       SLNO
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+MILLER             10       1300          3
+SCOTT              20       3000          1
+FORD               20       3000          2
+JONES              20       2975          3
+ADAMS              20       1100          4
+SMITH              20        800          5
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+TURNER             30       1500          3
+MARTIN             30       1250          4
+WARD               30       1250          5
+JAMES              30        950          6
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT ENAME,DEPTNO,SAL,SLNO
+  2  FROM(
+  3  SELECT ENAME,DEPTNO,SAL,
+  4   ROW_NUMBER  () OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS SLNO
+  5   FROM EMP
+  6  )
+  7* WHERE SLNO <=2
+SQL> /
+
+ENAME          DEPTNO        SAL       SLNO
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+SCOTT              20       3000          1
+FORD               20       3000          2
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+
+6 rows selected.
+
+SQL> SELECT EMP.*,ROW_NUMBER()
+  2  OVER(ORDER BY SAL DESC) AS EMPSAL
+  3  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          3
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          4
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          5
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          6
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          7
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          8
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          9
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         10
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         11
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         12
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         13
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20         14
+
+14 rows selected.
+
+SQL> SELECT EMP.*,ROW_NUMBER()
+  2  OVER(ORDER BY SAL DESC) AS EMPSAL
+  3  FROM EMP
+  4  
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT EMP.*,
+  2  ROW_NUMBER()OVER(ORDER BY SAL DESC) AS EMPSAL
+  3* FROM EMP
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          3
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          4
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          5
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          6
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          7
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          8
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          9
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         10
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         11
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         12
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         13
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20         14
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT EMP.*,
+  2  ROW_NUMBER() OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  3* FROM EMP
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          2
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          3
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          3
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20          4
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20          5
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          1
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          2
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          3
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30          4
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30          5
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30          6
+
+14 rows selected.
+
+SQL> SELECT EMP.*,ROW_NUMBER()
+  2  OVER(ORDER BY SAL DESC) AS EMPSAL
+  3  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          3
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          4
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          5
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          6
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          7
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          8
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          9
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         10
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         11
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         12
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         13
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20         14
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,ROW_NUMBER()
+  3  OVER(ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          2
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          3
+
+SQL> SELECT *
+  2  FROM (SELECT EMP.*,ROW_NUMBER()
+  3  OVER(ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5  WHERE EMPSAL <=3
+  6  
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,ROW_NUMBER()
+  3  OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          2
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          3
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          3
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          1
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          2
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          3
+
+9 rows selected.
+
+SQL> SELECT *
+  2  FROM (SELECT EMP.*,ROW_NUMBER()
+  3  OVER(ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5  WHERE EMPSAL <=3
+  6  
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *SELECT EMP.*,ROW_NUMBER()
+  2  OVER(ORDER BY SAL DESC) AS EMPSAL
+  3* FROM EMP
+SQL> /
+SELECT *SELECT EMP.*,ROW_NUMBER()
+        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> eD
+Wrote file afiedt.buf
+
+  1  SELECT EMP.*,RANK()
+  2  OVER(ORDER BY SAL DESC) AS EMPSAL
+  3* FROM EMP
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          2
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          4
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          5
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          6
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          7
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          8
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          9
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         10
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         10
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         12
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         13
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20         14
+
+14 rows selected.
+
+SQL> SELECT *
+  2  FROM (SELECT *
+  3  FROM (SELECT EMP.*,ROW_NUMBER()
+  4  OVER(ORDER BY SAL DESC) AS EMPSAL
+  5  FROM EMP)
+  6  WHERE EMPSAL <=3
+  7  
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,RANK()
+  3  OVER(ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          2
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,RANK()
+  3  OVER(PARTITION BY DEPTNOORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+OVER(PARTITION BY DEPTNOORDER BY SAL DESC) AS EMPSAL
+                              *
+ERROR at line 3:
+ORA-00907: missing right parenthesis
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,RANK()
+  3  OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          2
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          3
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          1
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          3
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          1
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          2
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          3
+
+9 rows selected.
+
+SQL> SELECT *
+  2  FROM (SELECT EMP.*,RANK()
+  3  OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5  WHERE EMPSAL <=3
+  6  
+SQL> 
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,DENSE_RANK()
+  3  OVER(ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          2
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          2
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          3
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,DENSE_RANK()
+  3  OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL <=3
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          1
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          2
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          3
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          1
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          1
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          2
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20          3
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          1
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          2
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          3
+
+10 rows selected.
+
+SQL> SELECT *
+  2  FROM (SELECT EMP.*,RANK()
+  3  OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5  WHERE EMPSAL <=3
+  6  
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM (SELECT EMP.*,DENSE_RANK()
+  3  OVER(ORDER BY SAL DESC) AS EMPSAL
+  4  FROM EMP)
+  5* WHERE EMPSAL =4
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          4
+
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT * FROM EMP
+  2* ORDER BY SAL DESC
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+
+14 rows selected.
+
+SQL>  SELECT *
+  2   FROM (SELECT EMP.*,DENSE_RANK()
+  3   OVER(ORDER BY SAL DESC) AS EMPSAL
+  4   FROM EMP)
+  5   WHERE EMPSAL =4
+  6  
+SQL> ed
+Wrote file afiedt.buf
+
+  1   SELECT *
+  2   FROM (SELECT EMP.*,DENSE_RANK()
+  3   OVER(PARTITION BY DEPTNO ORDER BY SAL DESC) AS EMPSAL
+  4   FROM EMP)
+  5*  WHERE EMPSAL =4
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     EMPSAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20          4
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30          4
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30          4
+============================================================================================================================================================
+
+
+  1  SELECT ENAME , SAL ,CASE
+  2  WHEN SAL>=2500 THEN 'PROMOTION'
+  3  ELSE 'NO PROMOTION'
+  4  END AS CATEGORY
+  5* FROM EMP
+SQL> /
+
+ENAME             SAL CATEGORY
+---------- ---------- ------------
+SMITH             800 NO PROMOTION
+ALLEN            1600 NO PROMOTION
+WARD             1250 NO PROMOTION
+JONES            2975 PROMOTION
+MARTIN           1250 NO PROMOTION
+BLAKE            2850 PROMOTION
+CLARK            2450 NO PROMOTION
+SCOTT            3000 PROMOTION
+KING             5000 PROMOTION
+TURNER           1500 NO PROMOTION
+ADAMS            1100 NO PROMOTION
+JAMES             950 NO PROMOTION
+FORD             3000 PROMOTION
+MILLER           1300 NO PROMOTION
+
+14 rows selected.
+
+
+SQL> SELECT ENAME,SAL,
+  2         CASE
+  3             WHEN SAL>=2000 THEN 'HIGH SAL'
+  4             WHEN SAL>=1000 THEN 'MID SAL'
+  5             ELSE 'LOW SAL'
+  6         END AS SAL_RANGE
+  7  FROM EMP;
+
+ENAME             SAL SAL_RANG
+---------- ---------- --------
+SMITH             800 LOW SAL
+ALLEN            1600 MID SAL
+WARD             1250 MID SAL
+JONES            2975 HIGH SAL
+MARTIN           1250 MID SAL
+BLAKE            2850 HIGH SAL
+CLARK            2450 HIGH SAL
+SCOTT            3000 HIGH SAL
+KING             5000 HIGH SAL
+TURNER           1500 MID SAL
+ADAMS            1100 MID SAL
+JAMES             950 LOW SAL
+FORD             3000 HIGH SAL
+MILLER           1300 MID SAL
+
+14 rows selected.
+
+============================================================================================================================================================
+SQL> SELECT ENAME, SAL
+  2  FROM EMP;
+
+ENAME             SAL
+---------- ----------
+SMITH             800
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+ADAMS            1100
+JAMES             950
+FORD             3000
+MILLER           1300
+
+14 rows selected.
+
+SQL> WITH EMP_DATA AS (
+  2      SELECT ENAME, SAL
+  3      FROM EMP
+  4  )
+  5  SELECT *
+  6  FROM EMP_DATA;
+
+ENAME             SAL
+---------- ----------
+SMITH             800
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+ADAMS            1100
+JAMES             950
+FORD             3000
+MILLER           1300
+
+14 rows selected.
+
+SQL> SELECT *
+  2  FROM EMP_DATA;
+FROM EMP_DATA
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist
+
+
+SQL> WITH EMP_DATA(SELECT ENAME,SAL
+  2  FROM EMP)
+  3  SELECT EMP_DATA 
+  4  FROM EMP;
+WITH EMP_DATA(SELECT ENAME,SAL
+             *
+ERROR at line 1:
+ORA-32033: unsupported column aliasing
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  WITH EMP_DATA (SELECT ENAME,SAL
+  2  FROM EMP)
+  3  SELECT EMP_DATA
+  4* FROM EMP
+SQL> /
+WITH EMP_DATA (SELECT ENAME,SAL
+              *
+ERROR at line 1:
+ORA-32033: unsupported column aliasing
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  WITH EMP_DATA AS (SELECT ENAME,SAL
+  2  FROM EMP)
+  3  SELECT EMP_DATA
+  4* FROM EMP
+SQL> /
+SELECT EMP_DATA
+       *
+ERROR at line 3:
+ORA-00904: "EMP_DATA": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  WITH EMP_DATA AS (SELECT ENAME,SAL
+  2  FROM EMP)
+  3  SELECT *
+  4* FROM EMP_DATA
+SQL> /
+
+ENAME             SAL
+---------- ----------
+SMITH             800
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+ADAMS            1100
+JAMES             950
+FORD             3000
+MILLER           1300
+
+14 rows selected.
+
+SQL> WITH DEPT30 AS (SELECT * 
+  2  FROM EMP
+  3  GROUP BY DEPTNO =30)
+  4  SELECT * 
+  5  FROM DEPT30;
+GROUP BY DEPTNO =30)
+                *
+ERROR at line 3:
+ORA-00907: missing right parenthesis
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  WITH DEPT30 AS (SELECT *
+  2  FROM EMP
+  3  WHERE DEPTNO =30)
+  4  SELECT *
+  5* FROM DEPT30
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+6 rows selected.
+
+SQL> WITH HIGH_SAL AS (SELECT ENAME ,SAL
+  2  FROM EMP
+  3  WHERE SAL >2000)
+  4  SELECT * 
+  5  FROM HIGH_SAL;
+
+ENAME             SAL
+---------- ----------
+JONES            2975
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+FORD             3000
+
+6 rows selected.
+
+SQL> WITH EMP_SAL AS(SELECT ENAME,SAL 
+  2  FROM EMP)
+  3  SELECT ENAME
+  4  FROM EMP_SAL
+  5  WHERE SAL>=3000;
+
+ENAME
+----------
+SCOTT
+KING
+FORD
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  WITH EMP_SAL AS(SELECT ENAME,SAL
+  2  FROM EMP)
+  3  SELECT *
+  4  FROM EMP_SAL
+  5* WHERE SAL>=3000
+SQL> /
+
+ENAME             SAL
+---------- ----------
+SCOTT            3000
+KING             5000
+FORD             3000
+
+SQL>  WITH EMP_SAL AS(SELECT ENAME,SAL
+  2   FROM EMP)
+  3   SELECT *
+  4   FROM EMP_SAL
+  5   WHERE SAL>=3000
+  6  ed
+  7  
+SQL> 
+SQL> ed
+Wrote file afiedt.buf
+
+  1   WITH EMP_SAL AS(SELECT ENAME,SAL
+  2   FROM EMP)
+  3   SELECT *
+  4   FROM EMP_SAL
+  5*  WHERE ENAME LIKE 'S%'
+  6  /
+
+ENAME             SAL
+---------- ----------
+SMITH             800
+SCOTT            3000
+
+SQL> WITH AVG_DEPT AS(SELECT DEPTNO,AVG(SAL)
+  2  FROM EMP 
+  3  GROUP BY DEPTNO)
+  4  SELECT *
+  5  FROM AVG_DEPT;
+
+    DEPTNO   AVG(SAL)
+---------- ----------
+        30 1566.66667
+        20       2175
+        10 2916.66667
+
+SQL>  WITH AVG_DEPT AS(SELECT DEPTNO,AVG(SAL)
+  2   FROM EMP 
+  3   GROUP BY DEPTNO)
+  4   SELECT *
+  5   FROM AVG_DEPT;
+
+    DEPTNO   AVG(SAL)
+---------- ----------
+        30 1566.66667
+        20       2175
+        10 2916.66667
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1   WITH AVG_DEPT AS(SELECT SAL, DEPTNO,AVG(SAL) AS AVGSAL
+  2   FROM EMP
+  3   GROUP BY DEPTNO
+  4  WHERE AVGSAL<SAL
+  5  )
+  6   SELECT *
+  7*  FROM AVG_DEPT
+SQL> /
+WHERE AVGSAL<SAL
+*
+ERROR at line 4:
+ORA-00907: missing right parenthesis
+
+
+SQL> WITH AVG_DEPT AS (
+  2      SELECT DEPTNO,
+  3             AVG(SAL) AS AVG_SAL
+  4      FROM EMP
+  5      GROUP BY DEPTNO
+  6  )
+  7  SELECT E.ENAME,
+  8         E.DEPTNO,
+  9         E.SAL
+ 10  FROM EMP E
+ 11  JOIN AVG_DEPT A
+ 12  ON E.DEPTNO = A.DEPTNO
+ 13  WHERE E.SAL > A.AVG_SAL;
+
+ENAME          DEPTNO        SAL
+---------- ---------- ----------
+ALLEN              30       1600
+JONES              20       2975
+BLAKE              30       2850
+SCOTT              20       3000
+KING               10       5000
+FORD               20       3000
+
+6 rows selected.
+
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+================================================================================================================================
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+PRODUCT                        TABLE
+CUSTOMER                       TABLE
+
+6 rows selected.
+
+SQL> DROP TABLE CUSTOMER;
+
+Table dropped.
+
+SQL>  SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+BIN$l0lzXTk3TDy8Xt1D1LzUww==$0 TABLE
+PRODUCT                        TABLE
+
+6 rows selected.
+
+SQL> SELECT *
+  2  FROM RECYCLEBIN;
+
+OBJECT_NAME                    ORIGINAL_NAME                    OPERATION
+------------------------------ -------------------------------- ---------
+TYPE                      TS_NAME                        CREATETIME
+------------------------- ------------------------------ -------------------
+DROPTIME               DROPSCN PARTITION_NAME                   CAN CAN
+------------------- ---------- -------------------------------- --- ---
+   RELATED BASE_OBJECT PURGE_OBJECT      SPACE
+---------- ----------- ------------ ----------
+BIN$qtSQ7avLTSOhumuXx2BdOg==$0 SYS_C005636                      DROP
+INDEX                     USERS                          2026-09-24:00:32:31
+2026-09-26:00:57:51    1466362                                  NO  YES
+     53220       53220        53221          8
+
+
+OBJECT_NAME                    ORIGINAL_NAME                    OPERATION
+------------------------------ -------------------------------- ---------
+TYPE                      TS_NAME                        CREATETIME
+------------------------- ------------------------------ -------------------
+DROPTIME               DROPSCN PARTITION_NAME                   CAN CAN
+------------------- ---------- -------------------------------- --- ---
+   RELATED BASE_OBJECT PURGE_OBJECT      SPACE
+---------- ----------- ------------ ----------
+BIN$rYWEBUuyRXqkxFWlnXwtow==$0 SYS_C005637                      DROP
+INDEX                     USERS                          2026-09-24:00:32:31
+2026-09-26:00:57:51    1466366                                  NO  YES
+     53220       53220        53222          8
+
+
+OBJECT_NAME                    ORIGINAL_NAME                    OPERATION
+------------------------------ -------------------------------- ---------
+TYPE                      TS_NAME                        CREATETIME
+------------------------- ------------------------------ -------------------
+DROPTIME               DROPSCN PARTITION_NAME                   CAN CAN
+------------------- ---------- -------------------------------- --- ---
+   RELATED BASE_OBJECT PURGE_OBJECT      SPACE
+---------- ----------- ------------ ----------
+BIN$l0lzXTk3TDy8Xt1D1LzUww==$0 CUSTOMER                         DROP
+TABLE                     USERS                          2026-09-24:00:32:31
+2026-09-26:00:57:51    1466370                                  YES YES
+     53220       53220        53220          8
+
+
+SQL> SET PAGES 1000 LINES 1000;
+SQL>  SELECT *
+  2   FROM RECYCLEBIN;
+
+OBJECT_NAME                    ORIGINAL_NAME                    OPERATION TYPE                      TS_
+------------------------------ -------------------------------- --------- ------------------------- 
+BIN$qtSQ7avLTSOhumuXx2BdOg==$0 SYS_C005636                      DROP      INDEX                     USE
+BIN$rYWEBUuyRXqkxFWlnXwtow==$0 SYS_C005637                      DROP      INDEX                     USE
+BIN$l0lzXTk3TDy8Xt1D1LzUww==$0 CUSTOMER                         DROP      TABLE                     USE
+
+SQL> FLASHBACK TABLE CUSTOMER
+  2  TO BEFORE DROP;
+
+Flashback complete.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+CUSTOMER                       TABLE
+PRODUCT                        TABLE
+
+6 rows selected.
+
+SQL> 
+SQL>  DROP TABLE CUSTOMER;
+
+Table dropped.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+BIN$esYwNiHdTHeTEVtyt4XVoA==$0 TABLE
+PRODUCT                        TABLE
+
+6 rows selected.
+
+SQL> PERGE TABLE CUSTOMER;
+SP2-0734: unknown command beginning "PERGE TABL..." - rest of line ignored.
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+BIN$esYwNiHdTHeTEVtyt4XVoA==$0 TABLE
+PRODUCT                        TABLE
+
+6 rows selected.
+
+SQL> PURGE TABLE CUSTOMER;
+
+Table purged.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+PRODUCT                        TABLE
+================================================================================================================================
+SQL> CREATE TABLE A_TABLE (
+  2      AID NUMBER(2)
+  3  );
+
+Table created.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+A_TABLE                        TABLE
+PRODUCT                        TABLE
+
+6 rows selected.
+
+SQL> ALTER TABLE A_TABLE
+  2  RENAME COLUMN 
+  3  
+SQL> 
+SQL> INSERT INTO A_TABLE VALUES (1);
+
+1 row created.
+
+SQL> INSERT INTO A_TABLE VALUES (3);
+
+1 row created.
+
+SQL> INSERT INTO A_TABLE VALUES (4);
+
+1 row created.
+
+SQL> INSERT INTO A_TABLE VALUES (6);
+
+1 row created.
+
+SQL> INSERT INTO A_TABLE VALUES (9);
+
+1 row created.
+
+SQL> SELECT * FROM A_TABLE;
+
+       AID
+----------
+         1
+         3
+         4
+         6
+         9
+
+SQL> RENAME A_TABLE TO A;
+
+Table renamed.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+A                              TABLE
+PRODUCT                        TABLE
+
+6 rows selected.
+
+SQL> CREATE TABLE B (
+  2      BID NUMBER(2)
+  3  );
+
+Table created.
+
+SQL> INSERT INTO B VALUES (1);
+
+1 row created.
+
+SQL> INSERT INTO B VALUES (2);
+
+1 row created.
+
+SQL> INSERT INTO B VALUES (5);
+
+1 row created.
+
+SQL> INSERT INTO B VALUES (9);
+
+1 row created.
+
+SQL> INSERT INTO B VALUES (8);
+
+1 row created.
+
+SQL> SELECT * FROM B;
+
+       BID
+----------
+         1
+         2
+         5
+         9
+         8
+
+SQL> SELECT AID
+  2  FROM A
+  3  
+SQL> UNION
+SP2-0042: unknown command "UNION" - rest of line ignored.
+SQL> 
+SQL> SELECT BID
+  2  FROM B;SELECT AID
+  3  FROM A
+  4  
+SQL> UNION
+SP2-0042: unknown command "UNION" - rest of line ignored.
+SQL> 
+SQL> SELECT BID
+  2  FROM B;SELECT AIDFROM AUNIONSELECT BIDFROM B;
+FROM B;SELECT AIDFROM AUNIONSELECT BIDFROM B
+      *
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+SQL> SELECT AID FROM A 
+  2  INTERSECT SELECT BID FROM B;
+
+       AID
+----------
+         1
+         9
+
+SQL> 
+SQL> 
+SQL>  SELECT AID FROM A 
+  2   INTERSECT SELECT BID FROM B;
+
+       AID
+----------
+         1
+         9
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1   SELECT AID FROM A
+  2*  UNION SELECT BID FROM B
+SQL> /
+
+       AID
+----------
+         1
+         2
+         3
+         4
+         5
+         6
+         8
+         9
+
+8 rows selected.
+
+SQL>  SELECT AID FROM A 
+  2   INTERSECT SELECT BID FROM B;
+
+       AID
+----------
+         1
+         9
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1   SELECT AID FROM A
+  2*  UNION ALL SELECT BID FROM B
+SQL> /
+
+       AID
+----------
+         1
+         3
+         4
+         6
+         9
+         1
+         2
+         5
+         9
+         8
+
+10 rows selected.
+
+SQL> 
+SQL>   1   SELECT AID FROM A
+SQL>   2*  UNION ALL SELECT BID FROM B
+SP2-0734: unknown command beginning "2*  UNION ..." - rest of line ignored.
+SQL> SQL> /
+SP2-0042: unknown command "SQL> /" - rest of line ignored.
+SQL> 
+SQL>        AID
+SP2-0042: unknown command "AID" - rest of line ignored.
+SQL> ----------
+SQL>          1
+  1*   SELECT AID FROM A
+SQL>          3
+SP2-0226: Invalid line number
+SQL>          4
+SP2-0226: Invalid line number
+SQL>          6
+SP2-0226: Invalid line number
+SQL>          9
+SP2-0226: Invalid line number
+SQL>          1
+  1*   SELECT AID FROM A
+SQL>          2
+  2*  UNION ALL SELECT BID FROM B
+SQL>          5
+SP2-0226: Invalid line number
+SQL>          9
+SP2-0226: Invalid line number
+SQL>          8
+SP2-0226: Invalid line number
+SQL> 
+SQL> 10 rows selected.
+SQL> 
+SQL> SQL>  SELECT AID FROM A 
+SP2-0734: unknown command beginning "SQL>  SELE..." - rest of line ignored.
+SQL>  INTERSECT SELECT BID FROM B;
+SP2-0734: unknown command beginning "INTERSECT ..." - rest of line ignored.
+SQL> 
+SQL> 
+SQL>  SELECT AID FROM A 
+  2   INTERSECT SELECT BID FROM B;
+
+       AID
+----------
+         1
+         9
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1   SELECT AID FROM A
+  2*  MINUS SELECT BID FROM B
+SQL> /
+
+       AID
+----------
+         3
+         4
+         6
+
+SQL> SELECT AID FROM A
+  2  MINUS SELECT BID FROM B;
+
+       AID
+----------
+         3
+         4
+         6
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT AID FROM B
+  2* MINUS SELECT BID FROM A
+SQL> /
+SELECT AID FROM B
+       *
+ERROR at line 1:
+ORA-00904: "AID": invalid identifier
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT BID FROM B
+  2* MINUS SELECT AID FROM A
+SQL> /
+
+       BID
+----------
+         2
+         5
+         8
+================================================================================================================================
+
+SQL> INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE','&QTY','&MFG')
+Enter value for pid: 002
+Enter value for pname: MILLER
+Enter value for price: 2000
+Enter value for qty: 2
+Enter value for mfg: 02-FEB-2026
+old   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE','&QTY','&M
+new   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('002','MILLER','2000','2','02-FEB-2
+
+1 row created.
+
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> DESC TABLE
+ERROR:
+ORA-00931: missing identifier
+
+
+SQL> DESC PRODUCT;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PID                                       NOT NULL NUMBER(3)
+ PNAME                                     NOT NULL VARCHAR2(20)
+ PRICE                                     NOT NULL NUMBER(8,2)
+ QTY                                                NUMBER(2)
+ MFG                                                DATE
+
+SQL> SET PAGES 100 LINES 100;
+SQL> DESC PRODUCT;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ----------------------------------
+ PID                                                   NOT NULL NUMBER(3)
+ PNAME                                                 NOT NULL VARCHAR2(20)
+ PRICE                                                 NOT NULL NUMBER(8,2)
+ QTY                                                            NUMBER(2)
+ MFG                                                            DATE
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+        11 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+DEPT                           TABLE
+EMP                            TABLE
+BONUS                          TABLE
+SALGRADE                       TABLE
+A                              TABLE
+B                              TABLE
+CUSTOMER                       TABLE
+PRODUCT                        TABLE
+
+8 rows selected.
+
+SQL> INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'&MFG'
+
+Enter value for pid: 2
+Enter value for pname: SMITH
+Enter value for price: 3000
+Enter value for mfg: 12-SEP-2026
+old   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'&
+new   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('2','SMITH','3000',DEFAULT,'12-SEP-
+INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('2','SMITH','3000',DEFAULT,'12-SEP-2026')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (SCOTT.SYS_C005632) violated
+
+
+SQL> /
+Enter value for pid: 3 
+Enter value for pname: SMITH
+Enter value for price: 3000
+Enter value for mfg: 10-SEM-2026
+old   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'&
+new   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('3 ','SMITH','3000',DEFAULT,'10-SEM
+INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('3 ','SMITH','3000',DEFAULT,'10-SEM-2026')
+                                                                                  *
+ERROR at line 1:
+ORA-01843: not a valid month
+
+
+SQL> /
+Enter value for pid: 3
+Enter value for pname: SMITH
+Enter value for price: 3000
+Enter value for mfg: 12-OCT-2026
+old   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'&
+new   1: INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('3','SMITH','3000',DEFAULT,'12-OCT-
+
+1 row created.
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+        11 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+
+SQL> ALTER TABLE PRODUCT
+  2  MODIFY DEFAULT DEFAULT(2);
+MODIFY DEFAULT DEFAULT(2)
+               *
+ERROR at line 2:
+ORA-00904: : invalid identifier
+
+
+SQL> eD
+Wrote file afiedt.buf
+
+  1  ALTER TABLE PRODUCT
+  2* MODIFY QTY DEFAULT(2)
+SQL> /
+
+Table altered.
+
+SQL>  INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'&MFG
+;
+Enter value for pid: 3
+Enter value for pname: ROHAN
+Enter value for price: 
+Enter value for mfg: 
+old   1:  INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'
+new   1:  INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('3','ROHAN','',DEFAULT,'')
+ INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('3','ROHAN','',DEFAULT,'')
+                                                                   *
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("SCOTT"."PRODUCT"."PRICE")
+
+
+SQL> 
+SQL> /
+Enter value for pid: 4
+Enter value for pname: ROHAN
+Enter value for price: 4000
+Enter value for mfg: 12-SEP-2014
+old   1:  INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('&PID','&PNAME','&PRICE',DEFAULT,'
+new   1:  INSERT INTO PRODUCT(PID ,PNAME,PRICE,QTY,MFG) VALUES ('4','ROHAN','4000',DEFAULT,'12-SEP
+
+1 row created.
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+        11 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+         4 ROHAN                      4000          2 12-SEP-14
+
+SQL> ALTER TABLE PRODUCT 
+  2  MODIFY QTY DEFAULT(1);
+
+Table altered.
+
+SQL> DESC PRODUCT;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ----------------------------------
+ PID                                                   NOT NULL NUMBER(3)
+ PNAME                                                 NOT NULL VARCHAR2(20)
+ PRICE                                                 NOT NULL NUMBER(8,2)
+ QTY                                                            NUMBER(2)
+ MFG                                                            DATE
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+        11 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+         4 ROHAN                      4000          2 12-SEP-14
+
+SQL> UPDATE PRODUCT
+  2  SET PID=1
+  3  WHERE PID=1;
+
+0 rows updated.
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+        11 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+         4 ROHAN                      4000          2 12-SEP-14
+
+SQL> UPDATE PRODUCT
+  2  SET PID=1
+  3  WHERE PID=11;
+
+1 row updated.
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+         1 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+         4 ROHAN                      4000          2 12-SEP-14
+
+SQL> DELETE FROM PRODUCT
+  2  WHERE PID IN (1);
+
+1 row deleted.
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+         4 ROHAN                      4000          2 12-SEP-14
+
+SQL>  DELETE FROM PRODUCT;
+
+3 rows deleted.
+
+SQL> SELECT * FROM PRODUCT;
+
+no rows selected
+
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> SELECT * FROM PRODUCT;
+
+       PID PNAME                     PRICE        QTY MFG
+---------- -------------------- ---------- ---------- ---------
+        11 HII                        1000          1 22-SEP-25
+         2 MILLER                     2000          2 02-FEB-26
+         3 SMITH                      3000          1 12-OCT-26
+         4 ROHAN                      4000          2 12-SEP-14
+================================================================================================================================
+================================================================================================================================
