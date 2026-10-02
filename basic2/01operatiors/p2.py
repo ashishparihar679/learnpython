@@ -7,4 +7,5 @@ print(5+9j+9+5j)    # complex + int + complex = complex
 
 print(5+'h')        # int + string = TypeError
 print(5.3+'h')      # float + string = TypeError
+
 print(5+3j+'h')     # complex + string = TypeError
