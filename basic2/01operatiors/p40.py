@@ -12,5 +12,5 @@ s1.pop()
 print(s1)
 s1.pop()
 print(s1)
-# s1.pop() KeyError: 'pop from an empty set'
+# # s1.pop() KeyError: 'pop from an empty set'
 print(s1) 
