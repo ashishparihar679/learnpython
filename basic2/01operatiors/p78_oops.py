@@ -1,13 +1,14 @@
 class Factory:
     a =100
-    def __init__(self,material,zip,pocket):
-        print(self)
-        self.material=material
-        self.zip=zip
-        self.pocket=pocket
-    # def show()
-        # print(self.material,)
+    def __init__(selfff,material,zip,pocket):
+        print(selfff)
+        selfff.material=material
+        selfff.zip=zip
+        selfff.pocket=pocket
+    def show(selfff):
+        print(selfff.material,selfff.pocket)
 
 reebok=Factory("lether",3,2)
-reebok=Factory("gethe",4,1)
-print(reebok.material)
+obj=Factory("gethe",4,1)
+# print(reebok.material)
+obj.show()
