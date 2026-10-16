@@ -1,3 +1,4 @@
+# HIRARACHICAL 
 class Home_appliance:
     type = 'Home Appliance'
 
