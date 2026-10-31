@@ -1,4 +1,4 @@
-from p91_multilevel import Product
+from p91_multilevel_inheritance_product import Product
 
 class Order(Product):
     type = "Order_class"

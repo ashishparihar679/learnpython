@@ -1,4 +1,4 @@
-from p89 import Home_appliance
+from p89_home_appliance_class import Home_appliance
 class washing_machine(Home_appliance):
     Home_appliance_type = "Washing machine"
 

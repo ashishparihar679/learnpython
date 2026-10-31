@@ -1,4 +1,4 @@
-from p94_multiple import Parent1,Parent2,Parent3
+from p94_multiple_inheritance_parents import Parent1,Parent2,Parent3
 
 class Child(Parent1,Parent2,Parent3):
     a="child class"

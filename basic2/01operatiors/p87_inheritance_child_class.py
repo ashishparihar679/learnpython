@@ -1,4 +1,4 @@
-from p86 import Parent
+from p86_inheritance_parent_class import Parent
 
 class Child(Parent):
     b=20

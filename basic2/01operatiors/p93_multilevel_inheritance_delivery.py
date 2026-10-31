@@ -1,4 +1,4 @@
-from p92 import Order
+from p92_multilevel_inheritance_order import Order
 class Delivery(Order):
     type = "Delivery_class"
     def __init__(self,Product_Name,price,order_id, quantity,delivery_address, delivery_status):
