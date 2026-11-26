@@ -95,14 +95,14 @@
 #==================================================================================================================== 
 
 
-row = int(input("enter the number of row : "))
-col = int(input("enter the number of col : "))
-for i in range(row):
-    val = col
-    for j in range(col):
-        print(val,end=" ")
-        val -= 1
-    print()
+# row = int(input("enter the number of row : "))
+# col = int(input("enter the number of col : "))
+# for i in range(row):
+#     val = col
+#     for j in range(col):
+#         print(val,end=" ")
+#         val -= 1
+#     print()
 
 # enter the number of row : 4
 # enter the number of col : 3
@@ -112,3 +112,12 @@ for i in range(row):
 # 3 2 1 
 
 #==================================================================================================================== 
+
+row = int(input("enter the number of row : "))
+col = int(input("enter the number of col : "))
+for i in range(row):
+    val = col
+    for j in range(col):
+        print(val,end=" ")
+        val -= 1
+    print()
