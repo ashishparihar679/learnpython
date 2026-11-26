@@ -244,20 +244,20 @@
 # 4 3 2 1 
     
 
-row = int(input("ENTER THE NUMBER OF ROW : "))
-col = int(input("ENTER THE NUMBER OF COL : "))
+# row = int(input("ENTER THE NUMBER OF ROW : "))
+# col = int(input("ENTER THE NUMBER OF COL : "))
 
-val =1
-for i in range(row):
-    for j in range(col):
-        if i % 2 == 0:
-            print(val,end=" ")
+# val =1
+# for i in range(row):
+#     for j in range(col):
+#         if i % 2 == 0:
+#             print(val,end=" ")
           
-        else:
-            print("*",end=" ")
-    print()
-    if i%2 == 0:
-        val +=1
+#         else:
+#             print("*",end=" ")
+#     print()
+#     if i%2 == 0:
+#         val +=1
 # ENTER THE NUMBER OF ROW : 5
 # ENTER THE NUMBER OF COL : 4
 # 1 1 1 1 
@@ -288,3 +288,32 @@ for i in range(row):
 # 1 * 2 * 3 
 # 1 * 2 * 3 
 # 1 * 2 * 3 
+
+#==================================================================================================================== 
+
+row = int(input("enter the number of row : "))
+col = int(input("enter the number of col : "))
+val = 1
+
+for i in range(row):
+    for j in range(col):
+
+        if i % 2 == 0:
+            if j % 2 == 0:
+                print(val, end=" ")
+                val += 1
+                if val > 9:
+                    val = 1
+            else:
+                print("*", end=" ")
+
+        else:
+            if j % 2 == 0:
+                print("*", end=" ")
+            else:
+                print(val, end=" ")
+                val += 1
+                if val > 9:
+                    val = 1
+
+    print()
