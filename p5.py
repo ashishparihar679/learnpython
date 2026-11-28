@@ -291,29 +291,259 @@
 
 #==================================================================================================================== 
 
-row = int(input("enter the number of row : "))
-col = int(input("enter the number of col : "))
+# row = int(input("enter the number of row : "))
+# col = int(input("enter the number of col : "))
+# val = 1
+
+# for i in range(row):
+#     for j in range(col):
+
+#         if i % 2 == 0:
+#             if j % 2 == 0:
+#                 print(val, end=" ")
+#                 val += 1
+#                 if val > 9:
+#                     val = 1
+#             else:
+#                 print("*", end=" ")
+
+#         else:
+#             if j % 2 == 0:
+#                 print("*", end=" ")
+#             else:
+#                 print(val, end=" ")
+#                 val += 1
+#                 if val > 9:
+#                     val = 1
+
+#     print()
+
+
+# row = int(input("enter the number of row : "))
+# col = int(input("enter the number of col : "))
+# val = 1
+# p = True
+# for i in range(row):
+#     for j in range(col):
+#         if p:
+#             print(val,end=" ")
+#             val+=1
+#             if val>9 : val=1
+#             p=False
+#         else:
+#             print("*",end=" ")
+#             p= True
+#     print()
+
+
+# enter the number of row : 4
+# enter the number of col : 5
+# 1 * 2 * 3 
+# * 4 * 5 * 
+# 6 * 7 * 8 
+# * 9 * 1 * 
+
+
+#==================================================================================================================== 
+
+
+# n = int(input("enter the number of col : "))
+# for i in range(n):
+#     for j in range(n):
+#         if i>=j:
+#             print("*",end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# enter the number of col : 5
+# *         
+# * *       
+# * * *     
+# * * * *   
+# * * * * * 
+
+#==================================================================================================================== 
+# n = int(input("enter the number of col : "))
+# for i in range(n):
+#     for j in range(n):
+#         if i<=j:
+#             print("*",end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# enter the number of col : 5
+# * * * * * 
+#   * * * * 
+#     * * * 
+#       * * 
+#         * 
+
+# #==================================================================================================================== 
+# n = int(input("enter the number of col : "))
+# for i in range(n):
+#     for j in range(n):
+#         if i==j:
+#             print("*",end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# enter the number of col : 5
+# *         
+#   *       
+#     *     
+#       *   
+#         * 
+
+
+#==================================================================================================================== 
+# n = int(input("enter the number of col : "))
+# for i in range(n):
+#     for j in range(n):
+#         if i+j==n-1:
+#             print("*",end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# enter the number of col : 5
+#         * 
+#       *   
+#     *     
+#   *       
+# *         
+
+#==================================================================================================================== 
+# n = int(input("enter the number of col : "))
+# for i in range(n):
+#     for j in range(n):
+#         if i+j>=n-1:
+#             print("*",end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# enter the number of col : 5
+#         * 
+#       * * 
+#     * * * 
+#   * * * * 
+# * * * * * 
+
+
+# #==================================================================================================================== 
+# n = int(input("enter the number of col : "))
+# for i in range(n):
+#     for j in range(n):
+#         if i+j<=n-1:
+#             print("*",end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# enter the number of col : 5
+# * * * * * 
+# * * * *   
+# * * *     
+# * *       
+# *         
+
+
+# ASSIGNMENT 1 :
+# #==================================================================================================================== 
+# n = int(input("enter the number of col : "))
+# val = 1
+# for i in range(n):
+#     for j in range(n):
+#         if i>=j:
+#             print(val,end=" ")
+           
+#         else:
+#             print(" ",end=" ")
+#     print()
+#     val +=1
+
+# enter the number of col : 4
+# 1       
+# 2 2     
+# 3 3 3   
+# 4 4 4 4 
+
+#==================================================================================================================== 
+n = int(input("enter the number of col : "))
 val = 1
-
-for i in range(row):
-    for j in range(col):
-
-        if i % 2 == 0:
-            if j % 2 == 0:
-                print(val, end=" ")
-                val += 1
-                if val > 9:
-                    val = 1
-            else:
-                print("*", end=" ")
-
+for i in range(n):
+    for j in range(n):
+        if i>=j:
+            print(val,end=" ")
+           
         else:
-            if j % 2 == 0:
-                print("*", end=" ")
-            else:
-                print(val, end=" ")
-                val += 1
-                if val > 9:
-                    val = 1
-
+            print(" ",end=" ")
     print()
+    val +=1
+
+# enter the number of col : 4
+# 1       
+# 2 2     
+# 3 3 3   
+# 4 4 4 4 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
